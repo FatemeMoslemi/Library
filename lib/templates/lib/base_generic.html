@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% block title %}<title>Local Library</title>{% endblock %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'catalog/styles.css' %}">
+  </head>
+  <body>
+
+    <header>
+      <article>
+        {% block sidebar %}
+        <ul>
+          <li><a href="{% url 'lib:index' %}">Home</a></li>
+          <li><a href="{% url 'lib:books_list' %}">Books list</a></li>
+          <li><a href="{% url 'lib:Authors_list' %}">Authors list</a></li>
+          <li><a href="/admin/">Admin Page</a></li>
+        </ul>
+        {% block sidebar %}
+      </article>
+    </header>
+
+    <section>
+
+      {% block content %}
+      {% endblock %}
+
+    </section>
+
+  </body>
+</html>
