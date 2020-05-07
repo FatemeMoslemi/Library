@@ -1,4 +1,5 @@
 from django.shortcuts import render, reverse
+from django.views import generic
 from . import models
 
 def index(request):
@@ -10,3 +11,9 @@ def index(request):
     return render(request, 'lib/index.html',
         context={'num_books':num_book, 'num_authors':num_author, 'num_availables':num_available}
     )
+
+class BookListView(generic.ListView):
+    model = models.Book
+
+class AuthorListView(generic.ListView):
+    model = models.Author

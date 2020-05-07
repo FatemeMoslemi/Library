@@ -16,12 +16,12 @@
       <article>
         {% block sidebar %}
         <ul>
-          <li><a href="{% url 'lib:index' %}">Home</a></li>
-          <li><a href="{% url 'lib:books_list' %}">Books list</a></li>
-          <li><a href="{% url 'lib:Authors_list' %}">Authors list</a></li>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'books_list' %}">Books list</a></li>
+          <li><a href="{% url 'authors_list' %}">Authors list</a></li>
           <li><a href="/admin/">Admin Page</a></li>
         </ul>
-        {% block sidebar %}
+        {% endblock %}
       </article>
     </header>
 
